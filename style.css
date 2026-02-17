@@ -1,4 +1,4 @@
-* {
+v* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,20 +8,23 @@
 body {
     font-family: 'Poppins', sans-serif;
     display: flex;
-    cursor: pointer;
-     background-image: url(Images/sidebar.jpg);
-  
+    background-image: url(Images/sidebar.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-/* SIDEBAR */
+/* SIDEBAR DESKTOP */
 .sidebar {
     width: 240px;
     height: 100vh;
     background-color: #004d66;
-
     color: white;
     position: fixed;
-    padding: 20px;
+    top: 0;
+    left: 0;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar .brand {
@@ -31,20 +34,24 @@ body {
 
 .sidebar ul {
     list-style: none;
+    padding: 0;
 }
 
 .sidebar ul li {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .sidebar ul li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 6px;
 }
 
 .sidebar ul li a:hover {
-    color: #00cc99;
+    background-color: #00cc99;
 }
 
 /* MAIN CONTENT */
@@ -60,35 +67,17 @@ header {
     color: white;
 }
 
-.logo-section {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    size: 10%;
-    background:transparent;
-
-}
-
 /* HERO */
 .hero {
-    
-    background-size: cover;
-    background-position: center;
-    background-color: #f4f4f4;
     padding: 100px 40px;
-    color: white;
+    background-color: #f4f4f4;
 }
 
 .hero-text {
     background-color: rgba(0,0,0,0.6);
     padding: 30px;
     max-width: 600px;
-}
-
-.icon{
-    width: 200px;
-    float: left;
-    height: 70px;
+    color: white;
 }
 
 .btn {
@@ -97,6 +86,7 @@ header {
     border: none;
     background-color: #00cc99;
     color: white;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -157,23 +147,53 @@ footer {
     color: white;
 }
 
-/* RESPONSIVE */
+/* SOCIAL ICONS */
+.icon a {
+    margin-right: 10px;
+    font-size: 22px;
+    color: #004d66;
+}
+
+/* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
 
     body {
         flex-direction: column;
-        
     }
 
     .sidebar {
-        position: relative;
+        position: fixed;
         width: 100%;
         height: auto;
-        text-align: center;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        z-index: 1000;
+    }
+
+    .sidebar .brand {
+        margin-bottom: 0;
+        font-size: 18px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        gap: 15px;
+    }
+
+    .sidebar ul li {
+        margin: 0;
+    }
+
+    .sidebar ul li a {
+        font-size: 14px;
+        padding: 5px 8px;
     }
 
     .main-content {
         margin-left: 0;
+        margin-top: 70px;
     }
 
     .cards {
