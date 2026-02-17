@@ -14,7 +14,10 @@
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
-    <h2 class="brand">SafeHealth</h2>
+    <div class="sidebar-header">
+        <h2 class="brand">SafeHealth</h2>
+        <button class="close-btn" aria-label="Close menu">×</button>
+    </div>
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#diseases">Diseases & Conditions</a></li>
@@ -22,133 +25,161 @@
         <li><a href="#supplies">Health Supplies</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-    
 </aside>
+
+<!-- OVERLAY to close sidebar when tapping outside -->
+<div class="sidebar-overlay"></div>
 
 <div class="main-content">
 
-<header>
-    <div class="logo-section">
-        <h1>SafeHealth Youth Platform</h1>
-    </div>
-</header>
+    <header>
+        <button class="menu-toggle" aria-label="Open menu">≡</button>
+        <div class="logo-section">
+            <h1>SafeHealth Youth Platform</h1>
+        </div>
+    </header>
 
-<!-- HERO SECTION -->
-<section id="home" class="hero">
-    <div class="hero-text">
-        <h2>Youth Health Awareness Starts Here</h2>
-        <p>Providing reliable information on major health conditions affecting young people.</p>
-        <button class="btn">Explore More</button>
-    </div>
-</section>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h2>Youth Health Awareness Starts Here</h2>
+            <p>Providing reliable information on major health conditions affecting young people.</p>
+            <button class="btn">Explore More</button>
+        </div>
+    </section>
 
-<!-- DISEASES SECTION -->
-<section id="diseases" class="section">
-    <h2>Diseases & Health Conditions</h2>
+    <!-- DISEASES SECTION -->
+    <section id="diseases" class="section">
+        <h2>Diseases & Health Conditions</h2>
 
-    <div class="cards">
+        <div class="cards">
+            <div class="card">
+                <img src="Images/HIV.jpg" alt="HIV">
+                <h3>HIV & AIDS</h3>
+                <p>Information on transmission, prevention, testing and treatment options.</p>
+            </div>
 
-        <div class="card">
-            <img src="Images/HIV.jpg" alt="HIV">
-            <h3>HIV & AIDS</h3>
-            <p>Information on transmission, prevention, testing and treatment options.</p>
+            <div class="card">
+                <img src="Images/SSTI.jpg" alt="STIs">
+                <h3>Sexually Transmitted Infections</h3>
+                <p>Learn symptoms, prevention strategies and early medical care.</p>
+            </div>
+
+            <div class="card">
+                <img src="Images/TB.jpg" alt="Tuberculosis">
+                <h3>Tuberculosis (TB)</h3>
+                <p>Airborne disease affecting lungs. Early diagnosis is essential.</p>
+            </div>
         </div>
 
-        <div class="card">
-            <img src="Images/SSTI.jpg" alt="STIs" size="50px">
-            <h3>Sexually Transmitted Infections</h3>
-            <p>Learn symptoms, prevention strategies and early medical care.</p>
+        <div class="cards">
+            <div class="card">
+                <img src="Images/Malaria.jpg" alt="Malaria">
+                <h3>Malaria</h3>
+                <p>Prevent through mosquito control and prompt treatment.</p>
+            </div>
+
+            <div class="card">
+                <img src="Images/Mental Health.jpg" alt="Mental Health">
+                <h3>Mental Health</h3>
+                <p>Address stress, anxiety and depression through awareness and support.</p>
+            </div>
+
+            <div class="card">
+                <img src="Images/Drug .jpg" alt="Substance Abuse">
+                <h3>Substance Abuse</h3>
+                <p>Understand risks of drug and alcohol abuse and seek help early.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <img src="Images/TB.jpg" alt="Tuberculosis">
-            <h3>Tuberculosis (TB)</h3>
-            <p>Airborne disease affecting lungs. Early diagnosis is essential.</p>
+    <!-- PREVENTION SECTION -->
+    <section id="prevention" class="section light">
+        <h2>Prevention & Healthy Living</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="Images/tesst.jpg" alt="Testing">
+                <p>Regular health testing and medical checkups.</p>
+            </div>
+            <div class="card">
+                <img src="Images/baldiet.jpg" alt="Healthy Lifestyle">
+                <p>Balanced diet, exercise and mental wellness practices.</p>
+            </div>
         </div>
+    </section>
 
-    </div>
+    <!-- HEALTH SUPPLIES SECTION -->
+    <section id="supplies" class="section">
+        <h2>Order Health Supplies</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="Images/testkit.jpg" alt="Test Kit">
+                <p>HIV Self-Test Kits</p>
+                <button>Order</button>
+            </div>
 
-    <div class="cards">
+            <div class="card">
+                <img src="Images/prevpacks.jpg" alt="Prevention Pack">
+                <p>Prevention Packs</p>
+                <button>Order</button>
+            </div>
 
-        <div class="card">
-            <img src="Images/Malaria.jpg" alt="Malaria" size="50%">
-            <h3>Malaria</h3>
-            <p>Prevent through mosquito control and prompt treatment.</p>
+            <div class="card">
+                <img src="Images/Supplements.jpg" alt="Supplements">
+                <p>Wellness Supplements</p>
+                <button>Order</button>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <img src="Images/Mental Health.jpg" alt="Mental Health">
-            <h3>Mental Health</h3>
-            <p>Address stress, anxiety and depression through awareness and support.</p>
+    <!-- CONTACT -->
+    <section id="contact" class="section light">
+        <h2>Contact & Support</h2>
+        <p>Email: support@safehealth.org</p>
+        <p>Phone: +254 700 000 000</p>
+        <div class="icon">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
         </div>
+    </section>
 
-        <div class="card">
-            <img src="Images/Drug .jpg" alt="Substance Abuse">
-            <h3>Substance Abuse</h3>
-            <p>Understand risks of drug and alcohol abuse and seek help early.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- PREVENTION SECTION -->
-<section id="prevention" class="section light">
-    <h2>Prevention & Healthy Living</h2>
-    <div class="cards">
-        <div class="card">
-            <img src="Images/tesst.jpg" alt="Testing">
-            <p>Regular health testing and medical checkups.</p>
-        </div>
-        <div class="card">
-            <img src="Images/baldiet.jpg" alt="Healthy Lifestyle">
-            <p>Balanced diet, exercise and mental wellness practices.</p>
-        </div>
-    </div>
-</section>
-
-<!-- HEALTH SUPPLIES SECTION -->
-<section id="supplies" class="section">
-    <h2>Order Health Supplies</h2>
-    <div class="cards">
-        <div class="card">
-            <img src="Images/testkit.jpg" alt="Test Kit">
-            <p>HIV Self-Test Kits</p>
-            <button>Order</button>
-        </div>
-
-        <div class="card">
-            <img src="Images/prevpacks.jpg" alt="Prevention Pack">
-            <p>Prevention Packs</p>
-            <button>Order</button>
-        </div>
-
-        <div class="card">
-            <img src="Images/Supplements.jpg" alt="Supplements">
-            <p>Wellness Supplements</p>
-            <button>Order</button>
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section light">
-    <h2>Contact & Support</h2>
-    <p>Email: support@safehealth.org</p>
-    <p>Phone: +254 700 000 000</p>
-      <div class="icon">
-             <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-             <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-             <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-             <a href="#"><ion-icon name="logo-google"></ion-icon></a>
-             <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
-       </div>
-</section>
-
-<footer>
-    <p>© 2026 SafeHealth Youth Platform</p>
-</footer>
+    <footer>
+        <p>© 2026 SafeHealth Youth Platform</p>
+    </footer>
 
 </div>
+
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+<script>
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const closeBtn = document.querySelector('.close-btn');
+const sidebar = document.querySelector('.sidebar');
+const overlay = document.querySelector('.sidebar-overlay');
+
+function openMenu() {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+}
+
+function closeMenu() {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+}
+
+menuToggle.addEventListener('click', openMenu);
+closeBtn.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
+
+// Close menu when clicking a link (mobile)
+document.querySelectorAll('.sidebar a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+</script>
+
 </body>
 </html>
