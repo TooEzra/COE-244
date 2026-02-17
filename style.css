@@ -1,4 +1,4 @@
-v* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,13 +7,14 @@ v* {
 
 body {
     font-family: 'Poppins', sans-serif;
-    display: flex;
     background-image: url(Images/sidebar.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
 
-/* SIDEBAR DESKTOP */
+/* ──────────────────────────────────────────────
+   SIDEBAR
+───────────────────────────────────────────────── */
 .sidebar {
     width: 240px;
     height: 100vh;
@@ -22,62 +23,113 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    z-index: 1000;
 }
 
-.sidebar .brand {
-    margin-bottom: 30px;
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.brand {
     font-weight: 700;
+}
+
+.close-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.4rem;
+    cursor: pointer;
+    padding: 0 8px;
 }
 
 .sidebar ul {
     list-style: none;
-    padding: 0;
 }
 
 .sidebar ul li {
-    margin: 15px 0;
+    margin: 24px 0;
 }
 
 .sidebar ul li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    display: block;
-    padding: 8px 10px;
-    border-radius: 6px;
+    font-size: 1.1rem;
 }
 
 .sidebar ul li a:hover {
-    background-color: #00cc99;
+    color: #00cc99;
 }
 
-/* MAIN CONTENT */
+/* ──────────────────────────────────────────────
+   MAIN CONTENT & HEADER
+───────────────────────────────────────────────── */
 .main-content {
     margin-left: 240px;
-    width: 100%;
+    transition: margin-left 0.3s ease;
 }
 
-/* HEADER */
 header {
     padding: 20px;
     background-color: #004d66;
     color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-/* HERO */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.2rem;
+    cursor: pointer;
+    padding: 8px 16px;
+}
+
+.logo-section h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* ──────────────────────────────────────────────
+   OVERLAY
+───────────────────────────────────────────────── */
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 900;
+    pointer-events: none;
+}
+
+/* ──────────────────────────────────────────────
+   OTHER SECTIONS (unchanged parts omitted for brevity)
+───────────────────────────────────────────────── */
 .hero {
-    padding: 100px 40px;
+    background-size: cover;
+    background-position: center;
     background-color: #f4f4f4;
+    padding: 100px 40px;
+    color: white;
 }
 
 .hero-text {
     background-color: rgba(0,0,0,0.6);
     padding: 30px;
     max-width: 600px;
-    color: white;
 }
 
 .btn {
@@ -90,10 +142,9 @@ header {
 }
 
 .btn:hover {
-    background-color:#004d66;
+    background-color: #004d66;
 }
 
-/* SECTIONS */
 .section {
     padding: 60px 40px;
 }
@@ -139,7 +190,17 @@ header {
     background-color: #00cc99;
 }
 
-/* FOOTER */
+.icon {
+    margin-top: 20px;
+}
+
+.icon a {
+    color: #004d66;
+    font-size: 1.8rem;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
 footer {
     text-align: center;
     padding: 20px;
@@ -147,60 +208,65 @@ footer {
     color: white;
 }
 
-/* SOCIAL ICONS */
-.icon a {
-    margin-right: 10px;
-    font-size: 22px;
-    color: #004d66;
-}
-
-/* RESPONSIVE MOBILE */
+/* ──────────────────────────────────────────────
+   MOBILE VIEW
+───────────────────────────────────────────────── */
 @media (max-width: 768px) {
 
     body {
-        flex-direction: column;
+        background-image: none; /* cleaner on small screens */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .close-btn {
+        display: block;
     }
 
     .sidebar {
-        position: fixed;
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px;
-        z-index: 1000;
+        transform: translateX(-100%);
+        width: 280px;           /* slightly wider for better touch targets */
     }
 
-    .sidebar .brand {
-        margin-bottom: 0;
-        font-size: 18px;
+    .sidebar.active {
+        transform: translateX(0);
     }
 
-    .sidebar ul {
-        display: flex;
-        gap: 15px;
-    }
-
-    .sidebar ul li {
-        margin: 0;
-    }
-
-    .sidebar ul li a {
-        font-size: 14px;
-        padding: 5px 8px;
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .main-content {
         margin-left: 0;
-        margin-top: 70px;
+    }
+
+    header {
+        justify-content: flex-start;
+        padding: 16px 20px;
+    }
+
+    .logo-section h1 {
+        font-size: 1.4rem;
     }
 
     .cards {
         flex-direction: column;
+        gap: 28px;
+    }
+
+    .card {
+        flex: 1 1 auto;
     }
 
     .hero {
-        padding: 60px 20px;
+        padding: 70px 24px;
+    }
+
+    .section {
+        padding: 50px 24px;
     }
 }
